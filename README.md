@@ -47,12 +47,13 @@ Fazer rollback geral
 
 # Docker Compose
 
-Executar o comando abaixo, pode precisar executar com sudo se necessário para ter permissão de escrita
+Executar o comando abaixo, pode precisar executar com sudo se necessário para ter permissão de escrita:
+
+```docker build -t fretes_api .```
 
 -- Importante preencher o .env ou passar os parametros .env.example quando executar o container
 
 Há um parametro POSTGRES_CONN_STRING no docker-compose.yaml
-```docker build -t fretes_api .```
 
 ```
 version:  '3.9'
