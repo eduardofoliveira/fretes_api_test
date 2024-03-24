@@ -1,6 +1,7 @@
 # API para Fretes - Dev Test
 
 Para iniciar o projeto execute os comandos:
+- Necessário ter um banco de dados POSTGRES rodando
 
 1º para instalar todos os pacotes
 ```npm install``` ou ```yarn``` se você utilizar yarn como gerenciador de pacotes
@@ -45,11 +46,13 @@ Fazer rollback da ultima migration
 Fazer rollback geral
 ```npx knex migrate:rollback --all```
 
-# Docker Compose
+# Subindo o projeto com Docker Compose
 
 Executar o comando abaixo, pode precisar executar com sudo se necessário para ter permissão de escrita:
 
 ```docker build -t fretes_api .```
+
+```docker compose up -d```
 
 -- Importante preencher o .env ou passar os parametros .env.example quando executar o container
 
