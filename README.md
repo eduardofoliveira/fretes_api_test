@@ -14,6 +14,7 @@ Para iniciar o projeto execute os comandos:
 ```yarn start```
 
 5° se estiver tudo OK, para configurar para subir sempre que reiniciar o servidor:
+
 ```npm install -g pm2```
 
 ```pm2 startup```
