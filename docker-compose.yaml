@@ -20,6 +20,10 @@ services:
         restart: always
         environment:
             - POSTGRES_CONN_STRING=postgres://postgres_user:postgres_password@postgres:5432/fretes
+            # - FRETE_API_CNPJ=
+            # - FRETE_API_TOKEN=
+            # - FRETE_API_CODIGO=
+            # - FRETE_API_CEP=
         ports:
             - 3000:3000
         depends_on:
