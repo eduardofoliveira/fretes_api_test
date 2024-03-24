@@ -33,4 +33,4 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3000/metrics?last_quotes=7
+GET http://localhost:3000/metrics?last_quotes=
