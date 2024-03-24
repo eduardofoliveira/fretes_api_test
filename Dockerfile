@@ -6,7 +6,7 @@ COPY . .
 
 RUN npm install
 
-RUN npx knex migrate:latest --env production
+# RUN npx knex migrate:latest --env production
 
 RUN npm run build
 
