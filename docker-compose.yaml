@@ -13,3 +13,14 @@ services:
             - 5432:5432
         volumes:
             - ./data/postgres:/var/lib/postgresql/data
+
+    api:
+        image: fretes_api
+        container_name: fretes_api
+        restart: always
+        environment:
+            - POSTGRES_CONN_STRING=postgres://postgres_user:postgres_password@postgres:5432/fretes
+        ports:
+            - 3000:3000
+        depends_on:
+            - postgres

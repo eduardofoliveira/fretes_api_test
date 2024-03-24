@@ -40,3 +40,39 @@ Fazer rollback da ultima migration
 
 Fazer rollback geral
 ```npx knex migrate:rollback --all```
+
+# Docker Compose
+
+Executar o comando abaixo, pode precisar executar com sudo se necessário para ter permissão de escrita
+-- Importante preencher o .env ou passar os parametros .env.example quando executar o container
+Há um parametro POSTGRES_CONN_STRING no docker-compose.yaml
+```docker build -t fretes_api .```
+
+```
+version:  '3.9'
+
+services:
+	postgres:
+		image:  postgres
+		container_name:  postgres
+		restart:  always
+		environment:
+			-  POSTGRES_USER=postgres_user
+			-  POSTGRES_PASSWORD=postgres_password
+			-  POSTGRES_DB=fretes
+		ports:
+			-  5432:5432
+		volumes:
+			-  ./data/postgres:/var/lib/postgresql/data
+
+	api:
+		image:  fretes_api
+		container_name:  fretes_api
+		restart:  always
+		environment:
+			-  POSTGRES_CONN_STRING=postgres://postgres_user:postgres_password@postgres:5432/fretes
+		ports:
+			-  3000:3000
+		depends_on:
+			-  postgres
+```
