@@ -15,8 +15,11 @@ Para iniciar o projeto execute os comandos:
 
 5° se estiver tudo OK, para configurar para subir sempre que reiniciar o servidor:
 ```npm install -g pm2```
+
 ```pm2 startup```
+
 ```pm2 start --name api-fretes dist/index.js```
+
 ```pm2 save```
 
 # Desenvolvimento
